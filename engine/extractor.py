@@ -60,7 +60,7 @@ class PDFExtractor:
 
         # === PHASE 3: OCR FALLBACK OVERRIDE ===
         # Import dynamically to avoid circular dependencies
-        from ocr import OCREngine
+        from engine.ocr import OCREngine
         
         if OCREngine.is_page_scanned(page_structure):
             print(f"Scanned page detected (Page {page.number}). Engaging OCR Fallback...")

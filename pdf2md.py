@@ -1,7 +1,7 @@
 import argparse
 import os
 import sys
-from extractor import PDFExtractor
+from engine.extractor import PDFExtractor
 
 def validate_pdf_path(path: str) -> str:
     """Validates that the provided path exists, is a file, and is a PDF."""
@@ -63,7 +63,7 @@ def main():
     print(f"Successfully extracted data from {len(pages_data)} pages!")
     
     # === PHASE 4: SEMANTIC PARSING ===
-    from parser import SemanticParser
+    from engine.parser import SemanticParser
     print("Beginning semantic parsing...")
     
     semantic_parser = SemanticParser(pages_data)
@@ -72,7 +72,7 @@ def main():
     print("Successfully mapped blocks to Headings and Paragraphs!")
     
     # === PHASE 5: TABLE EXTRACTION ===
-    from table_extractor import TableExtractor
+    from engine.table_extractor import TableExtractor
     print("Extracting tables using pdfplumber...")
     
     tb_extractor = TableExtractor(args.input)
@@ -124,7 +124,7 @@ def main():
     
     # === PHASE 6: ASSEMBLY AND OUTPUT ===
     # (Doing this slightly out of order so you can see the result!)
-    from assembler import MarkdownAssembler
+    from engine.assembler import MarkdownAssembler
     print("Assembling Markdown and cleaning up line breaks...")
     
     assembler = MarkdownAssembler(parsed_pages)

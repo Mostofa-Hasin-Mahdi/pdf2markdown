@@ -6,9 +6,9 @@
 
 ![Image](assets/image_1.jpeg)
 
-*Porter's Five Forces* Model reveals that Nexus Arena is not merely feasible but strategically
+Porter's Five Forces Model reveals that Nexus Arena is not merely feasible but strategically
 
-***positioned to build a sustainable and profitable*** business by navigating industry forces
+positioned to build a sustainable and profitable business by navigating industry forces
 
 intelligently.
 
