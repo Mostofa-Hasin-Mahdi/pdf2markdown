@@ -18,12 +18,8 @@
       "output": "release"
     },
     "win": {
-      "target": "nsis",
+      "target": "dir",
       "icon": "src/app/icon.png"
-    },
-    "nsis": {
-      "oneClick": false,
-      "allowToChangeInstallationDirectory": true
     },
     "extraResources": [
       {
@@ -39,6 +35,7 @@
     ]
   },
   "dependencies": {
+    "electron-serve": "^3.0.1",
     "framer-motion": "^12.38.0",
     "lucide-react": "^1.11.0",
     "next": "16.2.4",

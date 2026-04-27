@@ -2,6 +2,9 @@ const { app, BrowserWindow, ipcMain, dialog } = require('electron');
 const path = require('path');
 const { spawn } = require('child_process');
 const fs = require('fs');
+const serve = require('electron-serve').default || require('electron-serve');
+
+const loadURL = serve({ directory: 'out' });
 
 let mainWindow;
 
@@ -25,9 +28,8 @@ function createWindow() {
   
   if (isDev) {
     mainWindow.loadURL('http://localhost:3000');
-    // mainWindow.webContents.openDevTools();
   } else {
-    mainWindow.loadFile(path.join(__dirname, 'out/index.html'));
+    loadURL(mainWindow);
   }
 }
 

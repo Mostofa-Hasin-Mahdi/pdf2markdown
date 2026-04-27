@@ -9,3 +9,4 @@ __pycache__/
 /desktop-app/release/
 /desktop-app/.next/
 /desktop-app/out/
+/desktop-app/node_modules/
