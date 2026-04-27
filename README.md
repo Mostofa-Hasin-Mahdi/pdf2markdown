@@ -37,7 +37,7 @@ The system is separated into a 5-part data mining pipeline that communicates sea
 ## 🚀 Installation & Setup
 
 ### For End Users
-Simply download the **Portable Application** from the [GitHub Releases](../../tag) page!
+Simply download the **Portable Application** from the [GitHub Releases](../../tags) page!
 1. Download the `PDF-to-Markdown-win32-x64.zip` file.
 2. Extract the folder anywhere on your computer.
 3. Double-click `PDF to Markdown.exe` to launch the app!
