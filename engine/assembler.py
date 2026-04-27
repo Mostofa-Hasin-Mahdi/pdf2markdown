@@ -3,8 +3,9 @@ from typing import List, Dict, Any
 
 try:
     import spacy
-    # Load the small english model for sentence boundary detection
-    nlp = spacy.load("en_core_web_sm")
+    import en_core_web_sm
+    # Load the small english model for sentence boundary detection directly via module
+    nlp = en_core_web_sm.load()
     SPACY_AVAILABLE = True
 except (ImportError, OSError):
     SPACY_AVAILABLE = False
