@@ -6,3 +6,6 @@ ARCHITECTURE.md
 /*.spec
 __pycache__/
 /venv
+/desktop-app/release/
+/desktop-app/.next/
+/desktop-app/out/

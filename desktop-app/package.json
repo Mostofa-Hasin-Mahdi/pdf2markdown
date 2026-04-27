@@ -11,6 +11,32 @@
     "electron:dev": "concurrently -k \"npm run dev\" \"wait-on http://localhost:3000 && electron .\"",
     "electron:build": "npm run build && electron-builder"
   },
+  "build": {
+    "appId": "com.pdf2markdown.app",
+    "productName": "PDF to Markdown",
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "extraResources": [
+      {
+        "from": "../dist/pdf2md.exe",
+        "to": "pdf2md.exe"
+      }
+    ],
+    "files": [
+      "out/**/*",
+      "main.js",
+      "preload.js",
+      "package.json"
+    ]
+  },
   "dependencies": {
     "framer-motion": "^12.38.0",
     "lucide-react": "^1.11.0",
