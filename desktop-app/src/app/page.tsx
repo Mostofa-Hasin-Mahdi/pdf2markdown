@@ -71,8 +71,14 @@ export default function Home() {
     }
 
     try {
-      // 1. Get original path (Electron exposes 'path' on the File object magically)
-      const inputPath = (file as any).path;
+      // 1. Get original path securely through modern Electron APIs
+      const inputPath = (window as any).electronAPI.getPathForFile
+        ? (window as any).electronAPI.getPathForFile(file)
+        : (file as any).path;
+
+      if (!inputPath) {
+        throw new Error("Could not extract native file path. Please ensure you are running inside Electron.");
+      }
       
       // 2. Generate default output path (same directory, just .md)
       const defaultOutputPath = inputPath.replace(/\.pdf$/i, '.md');

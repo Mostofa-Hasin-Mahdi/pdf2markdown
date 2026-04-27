@@ -18,3 +18,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   overflow: hidden; /* Desktop apps shouldn't have scrollbars natively */
 }
+
+/* Forcefully hide Next.js development build indicator */
+nextjs-portal {
+  display: none !important;
+}

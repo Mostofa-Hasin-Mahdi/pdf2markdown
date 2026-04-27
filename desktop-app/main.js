@@ -9,6 +9,7 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1000,
     height: 700,
+    icon: path.join(__dirname, 'src', 'app', 'icon.png'),
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
@@ -99,7 +100,8 @@ ipcMain.handle('convert-pdf', async (event, inputPath, outputPath) => {
       if (code === 0) {
         resolve({ success: true, output: outputData });
       } else {
-        reject({ success: false, error: errorData });
+        // Resolve instead of reject so the React UI can safely parse the error
+        resolve({ success: false, error: errorData || `Process exited with code ${code}` });
       }
     });
   });
